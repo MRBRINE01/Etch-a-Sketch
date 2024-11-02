@@ -2,15 +2,21 @@
     display: flex;
     /* justify-content: center; */
     flex-wrap: wrap;
-    width: 500px; 
+    width: 600px;
+    /* height: 600px;  */
     margin: auto;
 
 }
 
 .box{
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
     /* background-color: black; */
     border: 1px solid grey;
+}
 
+.sizeButton{
+    size: 30px;
 }

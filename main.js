@@ -15,17 +15,54 @@ sizeButton.addEventListener("click", function(){
 });
 
 function updateGrid(size) {
+    container.innerHTML = '';
+
+    const boxSize = Math.floor(550 / size);
     
-    for (let i = 0; i < size * size; i++) {
+    for (let r = 0; r < size; r++) {
         const gridBox = document.createElement("div");
         gridBox.classList.add("box");
+
+        gridBox.style.width = `${boxSize}px`;
+        gridBox.style.height = `${boxSize}px`;
         
+        gridBox.style.flexDirection = 'row';
+
         gridBox.addEventListener("mouseover", function() {
             gridBox.style.backgroundColor = "black";
         });
         
         container.appendChild(gridBox);
+
+        for (let c = 0; c < size; c++) {
+            const gridBox = document.createElement("div");
+        gridBox.classList.add("box");
+
+        gridBox.style.width = `${boxSize}px`;
+        gridBox.style.height = `${boxSize}px`;
+        gridBox.style.flexDirection = 'column';
+
+        gridBox.addEventListener("mouseover", function() {
+            gridBox.style.backgroundColor = "black";
+        });
+        container.appendChild(gridBox);
+        }
+        
     }
+
+    // for (let i = 0; i < size; i++) {
+    //     const gridBox = document.createElement("div");
+    //     gridBox.classList.add("box");
+
+    //     gridBox.style.width = `${boxSize}px`;
+    //     gridBox.style.height = `${boxSize}px`;
+        
+    //     gridBox.addEventListener("mouseover", function() {
+    //         gridBox.style.backgroundColor = "black";
+    //     });
+        
+    //     container.appendChild(gridBox);
+    // }
     
 }
 
